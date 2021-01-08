@@ -37,6 +37,7 @@ The number of used datapoints are 10, 20, 40, 50, corresponding to the first to 
 
 The second figure has the same settings as the first one except one point that transforming the data
 to [-1, 1] before interpolating with monomial basis. 
+
 ![Alt text](chebyVSnpTrans.svg?raw=true "Chebyshev vs Monomial with tramsform")
 
 ## Conclusion
