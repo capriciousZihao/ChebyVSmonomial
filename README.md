@@ -30,9 +30,11 @@ function.
 
 ## Result
 Run discussionOnChebFitting.m and two Figures will be plotted.
+
 The first figure shows the error of the fitted polymomials from Chebyshev basis and monomial basis. 
 The number of used datapoints are 10, 20, 40, 50, corresponding to the first to the forth row.
 ![Alt text](chebyVSnp.svg?raw=true "Chebyshev vs vanillla Monomial")
+
 The second figure has the same settings as the first one except one point that transforming the data
 to [-1, 1] before interpolating with monomial basis. 
 ![Alt text](chebyVSnpTrans.svg?raw=true "Chebyshev vs Monomial with tramsform")
