@@ -1,4 +1,4 @@
-function [outputArg1] = MonomialInpterpolateNtrans(orderNum, SamplingPeriod, samples)
+function [outputArg1, coeffs] = MonomialInpterpolateNtrans(orderNum, SamplingPeriod, samples)
 %%%% T is the sampling period
 
     if orderNum <= 0 || orderNum > 100
@@ -33,8 +33,7 @@ function [outputArg1] = MonomialInpterpolateNtrans(orderNum, SamplingPeriod, sam
     for i = 1:order
         wPolynomial = wPolynomial + coeff(i)*monoBasis(i);
     end
-%     wPolynomial;
-    %%%% integerate angular velocity from -1 to the first 
+
     equals = sym([]);
     for i =1:order
 %         equals = [equals int((order)/2*T*wPolynomial,x,-1+(i-1)*2/(order),-1+i*2/(order))==samples(i)];
@@ -45,8 +44,10 @@ function [outputArg1] = MonomialInpterpolateNtrans(orderNum, SamplingPeriod, sam
 
     fields = fieldnames(coeff_solve);
     wPolynomial = sym(0);
+    coeffs = [];
     for i = 1:order
         wPolynomial = wPolynomial + getfield(coeff_solve(1), fields{i})*monoBasis(i);
+        coeffs = [coeffs vpa(getfield(coeff_solve(1), fields{i}) )];
     end
     outputArg1 = wPolynomial;
 
