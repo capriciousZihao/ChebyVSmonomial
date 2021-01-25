@@ -94,7 +94,7 @@ for i = 1:1
     semilogy(0:(dotNum-1),abs(coeffsMono),'LineWidth',1)
     
     ylabel('Coefficients')
-    legend('Cheby', 'CSMono', 'CSPMono', 'VaMono');
+    legend('Cheby', 'CSPMono', 'CSMono', 'VaMono');
 %     set(gca,'Color',[0.5 0.5 0.5])
 end
 
